@@ -45,11 +45,14 @@ export default {
       const light2 = new G3D.HemisphereLight(scene)
       light2.intensity = 0.5
 
-      loader.loadText('https://g.alicdn.com/gama/assets/0.0.3/assets/models/goose/index.json', content => {
+      loader.loadImage('https://img.alicdn.com/tfs/TB1jxUkigvD8KJjy0FlXXagBFXa-1024-512.jpg', image => {
+        loader.loadText('https://g.alicdn.com/gama/assets/0.0.3/assets/models/goose/index.json', content => {
           const model = JSON.parse(content)
           deer = G3D.MeshBuilder.createFromG3DModel(scene, model)
-        }
-      )
+          deer.materials.default.diffuseTexture.image = image
+          deer.materials.default.diffuseSource = G3D.Material.TEXTURE
+        })
+      })
     },
     c () {
       if (deer) {

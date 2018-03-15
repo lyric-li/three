@@ -1,3 +1,5 @@
+import G3D from 'g3d'
+
 function loadBlob(url, callback) {
     var xmlhttp = new XMLHttpRequest();
 
@@ -41,15 +43,12 @@ function loadBlob(url, callback) {
   }
 
   function loadImage(url, callback) {
-
-    const image = new Image();
-    image.crossOrigin = true;
-
-    image.onload = function() {
-
-    };
-
-    image.src = url;
+    const image = new G3D.Env.Image()
+    image.crossOrigin = true
+    image.onload = function () {
+      callback(image)
+    }
+    image.src = url
   }
 
-  export { loadText, loadImage, loadBlob };
+  export { loadText, loadImage, loadBlob }
