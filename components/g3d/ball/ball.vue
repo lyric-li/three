@@ -1,7 +1,5 @@
 <template>
-  <div class="ball">
-    <canvas id="canvas" width=600 height=600 ref="ball"></canvas>
-  </div>
+  <canvas class="ball" width=600 height=600 ref="ball"></canvas>
 </template>
 
 <script>
@@ -39,7 +37,7 @@ export default {
 
       // create mesh (ball)
       const ball = G3D.MeshBuilder.createSphere(scene, 2, 64, 64)
-      Object.assign(ball.position, {x: 1, y: -1, z: 1})
+      Object.assign(ball.position, {x: 1, y: 1, z: 1})
       Object.assign(ball.materials.default.diffuseColor, {r: 200, g: 100, b: 100})
       Object.assign(ball.materials.default.specularColor, {r: 200, g: 100, b: 100})
       ball.materials.default.glossiness = 10
@@ -58,9 +56,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-#canvas
+.ball
+  width 300px
   margin auto
-  width 600px
-  margin auto
-  display block
+  // display block
 </style>

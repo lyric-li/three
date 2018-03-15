@@ -102,6 +102,8 @@ $ yarn config set registry https://registry.npm.taobao.org
       scene.render()
       ```
 
-- [示例](./components/g3d/ball/ball.vue)
+- [示例](./pages/index.vue)
 
-&emsp;&emsp; ![](./preview.png)
+&emsp;&emsp; ![](./example/example-1.png)
+
+&emsp;&emsp; ![](./example/example-2.png)

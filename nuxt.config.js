@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -33,6 +35,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      config.resolve.alias['@/utils'] = path.join(__dirname, 'utils')
     },
     vendor: [
       'g3d',
