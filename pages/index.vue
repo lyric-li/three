@@ -1,8 +1,8 @@
 <template>
   <div class="home">
+    <particle-text/>
     <ball/>
     <deer/>
-    <!-- <started/> -->
   </div>
 </template>
 
@@ -10,12 +10,14 @@
 import ball from '@/components/g3d/ball'
 import deer from '@/components/g3d/deer'
 import started from '@/components/three/started'
+import particleText from '@/components/canvas/particle-text'
 export default {
   name: 'home',
   components: {
     ball,
     deer,
-    started
+    started,
+    particleText
   }
 }
 </script>
