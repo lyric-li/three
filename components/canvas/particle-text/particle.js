@@ -1,21 +1,21 @@
 import utils from './utils'
 
 class particle {
-  constructor (x, y, type, gravity, colors, radius) {
+  constructor (ctx, W, H, x, y, colors, gravity, radius) {
+    this.ctx = ctx
+    this.W = W
+    this.H = H
     this.x = x
     this.y = y
-    this.type = type
-    this.gravity = gravity
     this.color = colors[Math.floor(Math.random() * colors.length)]
-
+    this.gravity = gravity
     this.radius = 1.1
+
     this.friction = .99
     this.futurRadius = utils.randomInt(radius, radius + 3)
     this.rebond = utils.randomInt(1, 5)
-
     this.dying = false
     this.base = [x, y]
-
     this.vx = 0
     this.vy = 0
   }
@@ -38,7 +38,7 @@ class particle {
   angleTo (p2) {
     return Math.atan2(p2.y - this.y, p2.x - this.x)
   }
-  update (ctx, gravity, duration, speed, radius) {
+  update (gravity, duration, speed, radius) {
     this.x += this.vx
     this.y += this.vy
     this.vy += gravity
@@ -56,6 +56,7 @@ class particle {
       this.radius -= duration
     }
 
+    const ctx = this.ctx
     ctx.beginPath()
     ctx.fillStyle = this.color
     ctx.arc(this.x, this.y, this.radius, Math.PI * 2, false)
