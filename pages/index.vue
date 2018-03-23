@@ -13,21 +13,10 @@
     <ball/>
     <deer/>
     <br/>
-    <clock type="0"/>
-    <clock type="1"/>
-    <clock type="2"/>
-    <clock type="3"/>
-    <clock type="4"/>
-    <clock type="5"/>
-    <clock type="6"/>
-    <clock type="7"/>
-    <clock type="8"/>
-    <clock type="9"/>
-    <clock type="10"/>
-    <clock type="11"/>
-    <clock type="12"/>
-    <clock type="13"/>
-    <clock type="14"/>
+    <clock :type="index.toString()"
+      v-for="(item, index) in 15"
+      :key="index"
+    />
   </div>
 </template>
 
